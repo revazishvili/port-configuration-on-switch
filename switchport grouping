@@ -1,17 +1,24 @@
-! Switch 1 Configuration
 hostname Switch1
-vtp mode transparent
+vtp mode client
+vtp domain sangu
+vtp password YourPassword
 interface GigabitEthernet1/0/23
  description EtherChannel to Switch 2 - Link 1
  switchport mode trunk
  switchport trunk allowed vlan all
  channel-group 1 mode active
+ spanning-tree portfast trunk
+ spanning-tree bpduguard enable
+ spanning-tree guard root
 
 interface GigabitEthernet1/0/24
  description EtherChannel to Switch 2 - Link 2
  switchport mode trunk
  switchport trunk allowed vlan all
  channel-group 1 mode active
+ spanning-tree portfast trunk
+ spanning-tree bpduguard enable
+ spanning-tree guard root
 
 interface Port-channel1
  description Aggregated Link to Switch 2
@@ -25,20 +32,28 @@ interface Port-channel1
 end
 write memory
 
-! Switch 2 Configuration
+
 hostname Switch2
-vtp mode transparent
+vtp mode client
+vtp domain sangu
+vtp password YourPassword
 interface GigabitEthernet1/0/23
  description EtherChannel to Switch 1 - Link 1
  switchport mode trunk
  switchport trunk allowed vlan all
  channel-group 1 mode active
+ spanning-tree portfast trunk
+ spanning-tree bpduguard enable
+ spanning-tree guard root
 
 interface GigabitEthernet1/0/24
  description EtherChannel to Switch 1 - Link 2
  switchport mode trunk
  switchport trunk allowed vlan all
  channel-group 1 mode active
+ spanning-tree portfast trunk
+ spanning-tree bpduguard enable
+ spanning-tree guard root
 
 interface Port-channel1
  description Aggregated Link to Switch 1
@@ -51,3 +66,5 @@ interface Port-channel1
 ! Save configuration
 end
 write memory
+
+
