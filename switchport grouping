@@ -7,26 +7,19 @@ interface GigabitEthernet1/0/23
  switchport mode trunk
  switchport trunk allowed vlan all
  channel-group 1 mode active
- spanning-tree portfast trunk
- spanning-tree bpduguard enable
- spanning-tree guard root
+ 
 
 interface GigabitEthernet1/0/24
  description EtherChannel to Switch 2 - Link 2
  switchport mode trunk
  switchport trunk allowed vlan all
  channel-group 1 mode active
- spanning-tree portfast trunk
- spanning-tree bpduguard enable
- spanning-tree guard root
 
 interface Port-channel1
  description Aggregated Link to Switch 2
  switchport mode trunk
  switchport trunk allowed vlan all
- spanning-tree portfast trunk
- spanning-tree bpduguard enable
- spanning-tree guard root
+ 
 
 ! Save configuration
 end
@@ -42,26 +35,20 @@ interface GigabitEthernet1/0/23
  switchport mode trunk
  switchport trunk allowed vlan all
  channel-group 1 mode active
- spanning-tree portfast trunk
- spanning-tree bpduguard enable
- spanning-tree guard root
+ 
 
 interface GigabitEthernet1/0/24
  description EtherChannel to Switch 1 - Link 2
  switchport mode trunk
  switchport trunk allowed vlan all
  channel-group 1 mode active
- spanning-tree portfast trunk
- spanning-tree bpduguard enable
- spanning-tree guard root
+
 
 interface Port-channel1
  description Aggregated Link to Switch 1
  switchport mode trunk
  switchport trunk allowed vlan all
- spanning-tree portfast trunk
- spanning-tree bpduguard enable
- spanning-tree guard root
+
 
 ! Save configuration
 end
